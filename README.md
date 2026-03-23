@@ -1,54 +1,52 @@
-# spigifolio
+# Spigifolio Web
 
-This template should help get you started developing with Vue 3 in Vite.
+Spigifolio Web is the frontend for a personal investment portfolio dashboard. It is built with Vue.js and consumes the REST API from the [spigifolio backend](https://github.com/oliverTuesta/spigifolio). The goal was to visualize portfolio data in a clean, intuitive interface: balance summaries, asset positions, and transaction history.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Screenshot
 
-## Recommended Browser Setup
+<img width="1584" height="1238" alt="image" src="https://github.com/user-attachments/assets/372daf1e-0db7-4f3a-ab72-0f4df485aeb8" />
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+---
 
-## Type Support for `.vue` Imports in TS
+## Tech Stack
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- Vue.js 3 with Composition API
+- Vue Router
+- Axios for API communication
+- Vite
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Features
 
-## Project Setup
+- Portfolio summary showing total balance, monthly return, and active positions
+- Interactive chart of portfolio value over time
+- Asset positions table with unrealized gain/loss per holding
+- Movement history with filters by transaction type and date range
 
-```sh
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+- The [spigifolio backend](https://github.com/oliverTuesta/spigifolio-api) running locally
+
+```bash
+cp .env.example .env
+# Set VITE_API_URL to your backend URL (e.g. http://localhost:3000)
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Before using the app, you need to create a user. Open the backend's Swagger UI at `/api` and use the **POST /users** endpoint. The `id` returned in the response is what you will use to log in and view your portfolio.
 
-```sh
-npm run build
-```
+---
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Notes
 
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+This project was built as a learning exercise and a portfolio piece. It connects to a locally seeded database with approximated historical prices and is not linked to any real brokerage or market data provider.
