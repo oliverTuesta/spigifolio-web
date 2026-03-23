@@ -1,6 +1,6 @@
 # Spigifolio Web
 
-Spigifolio Web is the frontend for a personal investment portfolio dashboard. It is built with Vue.js and consumes the REST API from the [spigifolio backend](https://github.com/oliverTuesta/spigifolio). The goal was to visualize portfolio data in a clean, intuitive interface: balance summaries, asset positions, and transaction history.
+Spigifolio is a personal investment portfolio dashboard built with Vue 3. It connects to the [spigifolio backend](https://github.com/oliverTuesta/spigifolio-api) to display portfolio summaries, asset positions, and transaction history. The design follows a warm editorial aesthetic inspired by modern fintech SaaS products.
 
 ---
 
@@ -12,41 +12,40 @@ Spigifolio Web is the frontend for a personal investment portfolio dashboard. It
 
 ## Tech Stack
 
-- Vue.js 3 with Composition API
-- Vue Router
-- Axios for API communication
-- Vite
+- Vue 3 with TypeScript and Composition API
+- Vuetify 3 for UI components
+- Pinia for state management
+- Vue Router for navigation
+- Chart.js + vue-chartjs for the portfolio chart
 
 ---
 
 ## Features
 
-- Portfolio summary showing total balance, monthly return, and active positions
-- Interactive chart of portfolio value over time
-- Asset positions table with unrealized gain/loss per holding
-- Movement history with filters by transaction type and date range
+- Portfolio summary with total balance, monthly return, and active positions
+- Holdings table with current price, total value, and unrealized gain per asset
+- Portfolio evolution chart covering the last 6 months
+- Asset catalog with latest price and type filters
+- Movement history with pagination and filters by type and date range
+- Add movement form that automatically updates holdings on submit
 
 ---
 
 ## Getting Started
 
-### Prerequisites
-
+**Prerequisites**
 - Node.js 18+
-- npm or yarn
-- The [spigifolio backend](https://github.com/oliverTuesta/spigifolio-api) running locally
+- The [spigifolio backend](https://github.com/oliverTuesta/spigifolio-api) running on `http://localhost:3000`
 
 ```bash
-cp .env.example .env
-# Set VITE_API_URL to your backend URL (e.g. http://localhost:3000)
 npm install
 npm run dev
 ```
 
-Before using the app, you need to create a user. Open the backend's Swagger UI at `/api` and use the **POST /users** endpoint. The `id` returned in the response is what you will use to log in and view your portfolio.
+The app runs on `http://localhost:5173` by default. All API requests are proxied to `http://localhost:3000` via the Vite dev server config, so no CORS issues during development.
 
 ---
 
 ## Notes
 
-This project was built as a learning exercise and a portfolio piece. It connects to a locally seeded database with approximated historical prices and is not linked to any real brokerage or market data provider.
+This project was built as a learning exercise and portfolio piece. It is not connected to any real brokerage or market data provider. Prices shown are based on the seed data from the backend repository and are not financially accurate.
