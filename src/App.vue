@@ -1,11 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { RouterView } from 'vue-router'
+
+import AppNavbar from '@/components/layout/AppNavbar.vue'
+import { useUserStore } from '@/stores/user.store'
+
+const userStore = useUserStore()
+
+onMounted(() => {
+  void userStore.fetchUsers()
+})
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <v-app>
+    <AppNavbar />
+    <v-main>
+      <RouterView />
+    </v-main>
+  </v-app>
 </template>
-
-<style scoped></style>

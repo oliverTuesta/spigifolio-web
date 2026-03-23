@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #f5f0e8;
+  --bg-card: #ffffff;
+  --bg-alt: #ede8de;
+  --border: #1a1a1a;
+  --accent: #e85d26;
+  --accent-yellow: #f2c94c;
+  --text: #1a1a1a;
+  --text-muted: #7a7060;
+  --gain: #2d6a4f;
+  --loss: #c0392b;
+  --font-display: 'Pacifico', cursive;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+/* Base overrides */
+body,
+.v-application {
+  background-color: var(--bg) !important;
+  font-family: var(--font-body) !important;
+}
+
+.bg-alt {
+  background-color: var(--bg-alt) !important;
+}
+
+.text-text {
+  color: var(--text) !important;
+}
+
+/* Vuetify card override — black border, no shadow */
+.v-card {
+  border: 1.5px solid var(--border) !important;
+  box-shadow: none !important;
+}
+
+/* Vuetify outlined text fields — black border */
+.v-field--variant-outlined .v-field__outline {
+  border-color: var(--border) !important;
+  border-width: 1.5px !important;
+}
+
+/* Input focus color → orange */
+.v-field--focused .v-field__outline {
+  border-color: var(--accent) !important;
+}
+
+/* Navbar override */
+.v-app-bar {
+  border-bottom: 1.5px solid var(--border) !important;
+  box-shadow: none !important;
+}
+
+/* Table header */
+.v-data-table-header__content {
+  font-family: var(--font-body) !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  color: var(--text-muted) !important;
+}
+
+/* Table rows */
+.v-data-table__tr:hover td {
+  background-color: var(--bg-alt) !important;
+}
+
+/* Monospaced numbers in tables */
+.mono {
+  font-family: var(--font-mono) !important;
+}
+
+/* Headings use Orbitron */
+.display-font {
+  font-family: var(--font-display) !important;
+}
+
+/* All Vuetify heading classes use Space Rabbit */
+.text-h1, .text-h2, .text-h3, .text-h4, .text-h5, .text-h6 {
+  font-family: var(--font-display) !important;
+}
+
+/* Card titles use Space Rabbit */
+.v-card-title {
+  font-family: var(--font-display) !important;
+}
+
+/* Gain / loss colors */
+.text-gain {
+  color: var(--gain) !important;
+}
+
+.text-loss {
+  color: var(--loss) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
